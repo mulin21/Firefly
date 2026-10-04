@@ -13,7 +13,8 @@ const pages = resolvePageToggles({
 	// 友链页面开关
 	friends: true,
 	// 留言板页面开关，需要配置评论系统
-	guestbook: true,
+	// 启用评论系统(修改 commentConfig.ts 的 type)后可改回 true
+	guestbook: false,
 
 	// ── 我的 (My) ──────────────────────────────────
 
@@ -48,7 +49,7 @@ export const siteConfig: SiteConfig = {
 	subtitle: "Demo site",
 
 	// 站点 URL
-	site_url: "https://firefly.cuteleaf.cn",
+	site_url: "https://mulin21.ccwu.cc",
 
 	// 站点描述
 	description:

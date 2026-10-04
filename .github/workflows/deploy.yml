@@ -39,6 +39,12 @@ jobs:
       
       - name: Build site
         run: pnpm run build
+        env:
+          # 供构建脚本访问 GitHub API(生成文章内 GitHub 卡片),避免匿名限流
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Copy CNAME (custom domain)
+        run: if [ -f CNAME ]; then cp CNAME dist/CNAME; fi
 
       - name: Create .nojekyll file
         run: touch dist/.nojekyll
